@@ -67,6 +67,7 @@ cp %{SOURCE3} %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.deskt
 cp %{SOURCE4} %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop/metadata.json
 mkdir -p %{buildroot}%{_datadir}/kio/servicemenus
 mv %{buildroot}%{_datadir}/kservices5/ServiceMenus/steam.desktop %{buildroot}%{_datadir}/kio/servicemenus/steam.desktop
+find -name kservices5
 rm -rf %{buildroot}%{_datadir}/kservices5
 find -name look-and-feel
 find -name defaults
@@ -117,7 +118,6 @@ sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/co
 %{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/*
 %{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop/*
 %{_datadir}/themes/*
-%{_datadir}/wallpapers/*
 
 # Finally, changes from the latest release of your application are generated from
 # your project's Git history. It will be empty until you make first annotated Git tag.
