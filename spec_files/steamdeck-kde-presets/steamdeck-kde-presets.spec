@@ -68,6 +68,9 @@ cp %{SOURCE4} %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.deskto
 mkdir -p %{buildroot}%{_datadir}/kio/servicemenus
 mv %{buildroot}%{_datadir}/kservices5/ServiceMenus/steam.desktop %{buildroot}%{_datadir}/kio/servicemenus/steam.desktop
 rm -rf %{buildroot}%{_datadir}/kservices5
+tree %{buildroot}
+find -name defaults
+find -name Troll.jpg
 rm -rf %{buildroot}%{_datadir}/wallpapers
 rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
 sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
