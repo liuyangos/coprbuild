@@ -81,7 +81,7 @@ rm -rf %{buildroot}%{_datadir}/jupiter_bios_updater/driver
 rm -rf %{buildroot}%{_unitdir}/multi-user.target.wants
 rm -rf %{buildroot}%{_datadir}/alsa
 # Add Bazzite PNG
-cp %{SOURCE2} %{buildroot}%{_datadir}/steamos/steamos.png
+# cp %{SOURCE2} %{buildroot}%{_datadir}/steamos/steamos.png
 
 # Do post-installation
 %post
