@@ -1,6 +1,6 @@
 Name:           steamdeck-kde-presets
 Version:        {{{ git_dir_version }}}
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        KDE Presets from Valve's SteamOS 3.0
 License:        GPLv2
 URL:            https://github.com/ublue-os/bazzite
@@ -70,8 +70,10 @@ mv %{buildroot}%{_datadir}/kservices5/ServiceMenus/steam.desktop %{buildroot}%{_
 rm -rf %{buildroot}%{_datadir}/kservices5
 rm -rf %{buildroot}%{_datadir}/wallpapers
 rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
-sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
-sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop/contents/defaults
+cat >> %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults <<EOF
+[ksplashrc][KSplash]
+Theme=None
+EOF
 
 # Do post-installation
 %post
@@ -86,7 +88,6 @@ sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/co
 # are going to be installed into target system where the rpm is installed.
 %files
 %{_datadir}/color-schemes/Vapor.colors
-%{_datadir}/color-schemes/VGUI.colors
 %{_sysconfdir}/xdg/autostart/ibus.desktop
 %{_sysconfdir}/xdg/gtk-2.0/gtkrc
 %{_sysconfdir}/xdg/gtk-3.0/settings.ini
@@ -112,7 +113,6 @@ sed -i "s/^Theme=.*/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/co
 %{_datadir}/plasma/desktoptheme/*
 %{_datadir}/plasma/kickeractions/steam.desktop
 %{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/*
-%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop/*
 %{_datadir}/themes/*
 
 # Finally, changes from the latest release of your application are generated from
