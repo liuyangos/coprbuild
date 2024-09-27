@@ -70,6 +70,8 @@ mv %{buildroot}%{_datadir}/kservices5/ServiceMenus/steam.desktop %{buildroot}%{_
 rm -rf %{buildroot}%{_datadir}/kservices5
 rm -rf %{buildroot}%{_datadir}/wallpapers
 rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
+rm %{buildroot}%{_datadir}/color-schemes/VGUI.colors
+rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop
 cat >> %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults <<EOF
 [ksplashrc][KSplash]
 Theme=None
