@@ -73,6 +73,7 @@ rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
 rm %{buildroot}%{_datadir}/color-schemes/VGUI.colors
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash
+sed -i "s/^Theme=com.valve.vapor/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
 cat >> %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults <<EOF
 
 [ksplashrc][KSplash]
