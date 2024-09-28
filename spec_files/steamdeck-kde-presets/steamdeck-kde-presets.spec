@@ -1,6 +1,6 @@
 Name:           steamdeck-kde-presets
 Version:        {{{ git_dir_version }}}
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        KDE Presets from Valve's SteamOS 3.0
 License:        GPLv2
 URL:            https://github.com/ublue-os/bazzite
@@ -72,8 +72,11 @@ rm -rf %{buildroot}%{_datadir}/wallpapers
 rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
 rm %{buildroot}%{_datadir}/color-schemes/VGUI.colors
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop
+rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash
 cat >> %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults <<EOF
+
 [ksplashrc][KSplash]
+Engine=none
 Theme=None
 EOF
 
