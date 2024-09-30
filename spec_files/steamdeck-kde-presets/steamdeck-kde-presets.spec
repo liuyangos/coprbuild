@@ -11,6 +11,7 @@ Source2:        bazzite_logo.svgz
 Source3:        metadata_vapor.json
 Source4:        metadata_vgui2.json
 Source5:        plasmarc
+Source6:        defaults
 BuildArch:      noarch
 Patch0:         fedora.patch
 Patch1:         nested-desktop-resolution.patch
@@ -73,13 +74,7 @@ rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
 rm %{buildroot}%{_datadir}/color-schemes/VGUI.colors
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash
-sed -i "s/^Theme=com.valve.vapor/Theme=None/" %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
-cat >> %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults <<EOF
-
-[ksplashrc][KSplash]
-Engine=none
-Theme=None
-EOF
+cp %{SOURCE6} %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
 
 # Do post-installation
 %post
