@@ -73,7 +73,6 @@ rm -rf %{buildroot}%{_datadir}/wallpapers
 rm %{buildroot}%{_sysconfdir}/skel/Desktop/Return.desktop
 rm %{buildroot}%{_datadir}/color-schemes/VGUI.colors
 rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vgui.desktop
-rm -rf %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash
 cp %{SOURCE6} %{buildroot}%{_datadir}/plasma/look-and-feel/com.valve.vapor.desktop/contents/defaults
 
 # Do post-installation
